@@ -184,7 +184,7 @@ public sealed class Shrine : Snek
                     var targets = new int[] { 9, 15, 21 };
                     var selectedItems = new ForecastItem[3];
 
-                    for(int i=0; i<3; i++)
+                    for(int i = 0; i < 3; i++)
                     {
                          var target = targets[i];
                          var candidate = items.OrderBy(item => Math.Abs(int.Parse(item.dt_txt.Split(' ')[1].Split(':')[0]) - target)).FirstOrDefault();
@@ -195,7 +195,7 @@ public sealed class Shrine : Snek
                     }
 
                     var seen = new HashSet<long>();
-                    for(int i=0; i<3; i++)
+                    for(int i = 0; i < 3; i++)
                     {
                         if(selectedItems[i] != null)
                         {
@@ -210,7 +210,7 @@ public sealed class Shrine : Snek
                         var dailyMax = Math.Round(items.Max(x => x.main.temp_max));
                         var dailyMin = Math.Round(items.Min(x => x.main.temp_min));
                         
-                        for(int i=0; i<3; i++)
+                        for(int i = 0; i < 3; i++)
                         {
                             var colName = (i == 0) ? $"**{displayDate}** ({dailyMax}°C / {dailyMin}°C)" : "\u200b";
                             var item = selectedItems[i];

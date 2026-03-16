@@ -1,6 +1,6 @@
 # NorthShirahebi
 
-A [Medusa](https://nadekobot.readthedocs.io/en/latest/medusa/creating-a-medusa/) module (plugin) for [NadekoBot](https://gitlab.com/kwoth/nadekobot).
+A [Medusa](https://docs.nadeko.bot/medusa/getting-started/) module (plugin) for [NadekoBot](https://github.com/nadeko-bot/nadekobot).
 
 ## Features
 
@@ -31,6 +31,32 @@ To use the weather commands, you must obtain an API key from [OpenWeatherMap](ht
 ```bash
 export OPENWEATHERMAP_API_KEY="your_api_key_here"
 ```
+
+### Systemd Configuration
+
+If you are running the bot as a `systemd` service, follow these steps to set the environment variable:
+
+1.  Edit your service file (usually located at `/etc/systemd/system/nadekobot.service`):
+
+    ```bash
+    sudo nano /etc/systemd/system/nadekobot.service
+    ```
+
+2.  Add the `Environment` directive under the `[Service]` section:
+
+    ```ini
+    [Service]
+    ...
+    Environment="OPENWEATHERMAP_API_KEY=your_api_key_here"
+    ...
+    ```
+
+3.  Reload the systemd daemon and restart the service for changes to take effect:
+
+    ```bash
+    sudo systemctl daemon-reload
+    sudo systemctl restart nadekobot
+    ```
 
 ## Installation
 
