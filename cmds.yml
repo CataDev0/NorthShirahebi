@@ -47,3 +47,15 @@ megumin:
   desc: "Explosive girl"
   args:
     - ""
+
+weather:
+  desc: "Shows current weather for a location."
+  args:
+    - "London"
+    - "New York, US"
+
+forecast:
+  desc: "Shows weather forecast for a location."
+  args:
+    - "Tokyo"
+    - "Berlin"
